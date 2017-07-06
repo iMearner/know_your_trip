@@ -27,7 +27,7 @@ nav{
 	font-size: 120px;
 	font-family: Pacifico;
 	padding: 50px;
-	width:500px;
+	float: left;
 }
 .subSect{
 	height: 50%;
@@ -51,16 +51,24 @@ nav{
 nav .btn:hover{
 	color:white;
 }
+
 .sect label form input[type=text] {
-    width: 500px;
-    float: right;
+    float: left;
     border: 5px solid rgba(255,255,255,0.63);
     border-radius: 50px;
     font-size: 30px;
     background-color: transparent;
-    background-image: url('search.png');
     background-position: 20px 20px; 
     background-repeat: no-repeat;
     padding: 15px 32px 18px 63px;
-    margin-bottom: 200px;
 }
+.btn-new{
+	float: left;
+    background-color: transparent;
+    padding: 19px;
+    margin: 1px 11px;
+    font-size: 28px;
+    border-radius: 0;
+    border: 2px solid transparent;
+}
+
