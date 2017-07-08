@@ -72,3 +72,12 @@ nav .btn:hover{
     border: 2px solid transparent;
 }
 
+div div textarea{
+	font-family: Pacifico;
+    font-size: x-large;
+    line-height: inherit;
+    background: transparent;
+    border: none;
+    color: white;
+
+}
