@@ -82,6 +82,13 @@
 // 				}
 // 				// printing result 
 // 				 echo $myString ;
+				$content = file_get_contents('http://example.com'); // getting html content of website 
+
+				$path = getcwd(); // to get the path of the current file
+
+				$file = fopen($path . '/untitled.html', 'w'); // file opened to copy data in file 
+				fwrite($file, $content) ;   // write data inside the file 
+				fclose($file) ; // close file 
 				
 				$output = shell_exec("python3 path/to/your/file.py 2>&1"); // 2>&1 is to display errors 
 				echo $output
