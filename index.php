@@ -29,59 +29,62 @@
 		</label>
 		<div>
 			<textarea id="demo" rows="10" cols="50" style="display:none;">
-				<?php 
-				$orgString = file_get_contents('http://paramtechnosys.com');
-				$myString = substr($orgString, strpos($orgString, '<p'),strpos($orgString, '</p>'));
+// 				<?php 
+// 				$orgString = file_get_contents('http://paramtechnosys.com');
+// 				$myString = substr($orgString, strpos($orgString, '<p'),strpos($orgString, '</p>'));
 			 
 
-                $start = strpos($myString, '<');
-                $end = strpos($myString, '>');
+//                 $start = strpos($myString, '<');
+//                 $end = strpos($myString, '>');
 
 
-                $loop1 = true;
-                $offst = 0;
-				$x = 0;
-				while ($loop1) 
-				{
+//                 $loop1 = true;
+//                 $offst = 0;
+// 				$x = 0;
+// 				while ($loop1) 
+// 				{
 					
-					$myString = " ". $myString ;
+// 					$myString = " ". $myString ;
 
-					$start = strpos($myString, '<');
-                    $end = strpos($myString, '>');
+// 					$start = strpos($myString, '<');
+//                     $end = strpos($myString, '>');
 					
-					if($end > $start)
-					{
-						$newSubString = substr( $myString, $start,$end) ;
-						$myString = str_replace($newSubString, " ",$myString);
-					}
-					else
-					{
-						// replaces '>' character with whitespace  
-						$temp = strpos($myString, '>') ;
-						$myString = substr_replace($myString," ",$temp ,1);
+// 					if($end > $start)
+// 					{
+// 						$newSubString = substr( $myString, $start,$end) ;
+// 						$myString = str_replace($newSubString, " ",$myString);
+// 					}
+// 					else
+// 					{
+// 						// replaces '>' character with whitespace  
+// 						$temp = strpos($myString, '>') ;
+// 						$myString = substr_replace($myString," ",$temp ,1);
 
-						// to update values of start and end
-						$start = strpos($myString, '<');
-                    	$end = strpos($myString, '>');
-					}
+// 						// to update values of start and end
+// 						$start = strpos($myString, '<');
+//                     	$end = strpos($myString, '>');
+// 					}
 					
 					
 
-					if($start < $end)
-					{
+// 					if($start < $end)
+// 					{
 
-					  $loop1 = true;
-					}
-					else
-					{
-						$loop1 = false ;
-					}
+// 					  $loop1 = true;
+// 					}
+// 					else
+// 					{
+// 						$loop1 = false ;
+// 					}
 
-					$x = +1 ;
+// 					$x = +1 ;
 					
-				}
-				// printing result 
-				 echo $myString ;
+// 				}
+// 				// printing result 
+// 				 echo $myString ;
+				
+				$output = shell_exec("python3 path/to/your/file.py 2>&1"); // 2>&1 is to display errors 
+				echo $output
 				?> 
 			</textarea>
 		</div>
