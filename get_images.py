@@ -23,4 +23,5 @@ for image in raw_images :
 		else:
 			pass
 
-print(images)
+for image in images :
+	print(str(image))	
