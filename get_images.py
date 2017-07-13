@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 import re
 
-url = 'http://paramtechnosys.com'
+url = str(sys.argv[1])
 
 html = urlopen(url)
 
