@@ -1,27 +1,25 @@
-from urllib2 import urlopen 
+import requests 
 from bs4 import BeautifulSoup
-
+import sys
 import re
 
-url = str(sys.argv[1])
+count = 0 
+q = str(sys.argv[1])
 
-html = urlopen(url)
+query = q + "tour" + "travel"
 
-images = list()
-bs = BeautifulSoup(html,'lxml')
+raw_images_content = requests.get('http://in.images.search.yahoo/search/images;?p=' + query)
+raw_images = raw_images_content.text
 
-tag = bs.body
-raw_images = tag.findAll('img')
+bs = BeautifulSoup(raw_images,'lxml')
 
-for image in raw_images :
-	for p in str(image).split():
-		if 'src=' in p :
-			p = p.replace('src="','')
-			cut = p.index('"')
-			p = p[:cut]
-			images.append(p)
-		else:
-			pass
+tag = bs.findAll('img')
 
-for image in images :
-	print(str(image))	
+for image in tag :
+	image = str(image)
+	if ' src=' in image :
+		link = image[image.index(' src=')+6:image.index('&')]
+		print("<img src=%sstyle='padding:10px; width:250px;' > " %(link) )
+		count += 1
+	if count > 15:
+		break
