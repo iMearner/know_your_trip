@@ -7,14 +7,20 @@ html, body {
 	width :100%;
 }
 
-
-
-nav{
-	height: 80px;
+div nav{
+	height: 50px;
 	width: 100%;
-	background-color: rgba(0,0,0,0);
+	background-color: rgba(0,0,0,0.4);
 	position: fixed;
+	margin-bottom: 10px;
 }
+
+
+#content{
+	margin-top: 50px;
+}
+
+
 
 .sect{
 	height: 100%;
@@ -49,7 +55,7 @@ nav{
 	font-family: Pacifico;
 }
 nav .btn:hover{
-	color:white;
+	color:grey;
 }
 
 .sect label form input[type=text] {
@@ -72,12 +78,5 @@ nav .btn:hover{
     border: 2px solid transparent;
 }
 
-div div textarea{
-	font-family: Pacifico;
-    font-size: x-large;
-    line-height: inherit;
-    background: transparent;
-    border: none;
-    color: white;
 
-}
+
