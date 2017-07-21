@@ -1,14 +1,14 @@
-import requests 
+import requests
 from bs4 import BeautifulSoup
 import sys
-import re
+import re 
 
 def clear_tag(raw_content):
 	cleaner = re.compile('<.*?>')
 	clear_text = re.sub(cleaner,'',raw_content)
-	rerurn clear_text
+	return clear_text
 
-url1= ''
+url1 = ''
 url2 = ''
 
 q = str(sys.argv[1]) # query inserted by user 
@@ -52,5 +52,6 @@ details = details.text
 new_soup = BeautifulSoup(details,'lxml')
 para = new_soup.findAll('p')
 
-para = clear_tag(para)
-print(str(para).encode('utf-8'))
+# clear tags from the content using regex 
+para = clear_tag(str(para))
+print(para.encode('utf-8').decode('ascii','ignore'))
