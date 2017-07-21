@@ -10,17 +10,18 @@ html, body {
 div nav{
 	height: 50px;
 	width: 100%;
-	background-color: rgba(0,0,0,0.4);
+	background-color: #21886F;
 	position: fixed;
 	margin-bottom: 10px;
 }
 
+.col-sm-8 form input{
+	border-radius: 5px;
+}
 
 #content{
 	margin-top: 50px;
 }
-
-
 
 .sect{
 	height: 100%;
@@ -77,6 +78,3 @@ nav .btn:hover{
     border-radius: 0;
     border: 2px solid transparent;
 }
-
-
-
