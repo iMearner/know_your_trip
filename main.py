@@ -3,6 +3,11 @@ from bs4 import BeautifulSoup
 import sys
 import re
 
+def clear_tag(raw_content):
+	cleaner = re.compile('<.*?>')
+	clear_text = re.sub(cleaner,'',raw_content)
+	rerurn clear_text
+
 url1= ''
 url2 = ''
 
@@ -46,4 +51,6 @@ details = details.text
 # display content of scrapped webpage
 new_soup = BeautifulSoup(details,'lxml')
 para = new_soup.findAll('p')
+
+para = clear_tag(para)
 print(str(para).encode('utf-8'))
